@@ -2,7 +2,8 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-    - feature/**
+    - main
+    #- feature/**
     #paths:
     ##- azsvcs/**
     #- '**.tf'
