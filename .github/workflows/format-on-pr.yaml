@@ -4,7 +4,7 @@ on:
     branches:
     - dev
     paths:
-    - azsvcs/**
+    #- azsvcs/**
     - '**.tf'
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        files: ${{ fromJSON(needs.get-modifications.outputs.modified) }}
+        files: ${{ fromJSON(needs.get-modifications.outputs.matrix) }}
       fail-fast: true
     steps:
     - uses: actions/checkout@v2
