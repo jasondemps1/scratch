@@ -4,9 +4,9 @@ on:
     branches:
     - main
     #- feature/**
-    #paths:
-    ##- azsvcs/**
-    #- '**.tf'
+    paths:
+    - '**.tf'
+    #- azsvcs/**
 
 jobs:
   get-modifications:
@@ -24,9 +24,10 @@ jobs:
     strategy:
       matrix:
         files: ${{ fromJSON(needs.get-modifications.outputs.matrix) }}
-      fail-fast: true
+      fail-fast: false
     steps:
     - uses: actions/checkout@v2
     - name: Terraform Format Check
+      working-directory: ${{ matrix.files }}
       run: |
         terraform fmt -check
