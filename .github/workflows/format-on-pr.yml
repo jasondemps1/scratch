@@ -28,6 +28,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Terraform Format Check
-      working-directory: ${{ matrix.files }}
+      #working-directory: ${{ matrix.files }}
+      env:
+        filepath: ${{ matrix.file }}
       run: |
-        terraform fmt -check
+        terraform fmt $filepath -check
