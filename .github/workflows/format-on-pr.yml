@@ -30,6 +30,6 @@ jobs:
     - name: Terraform Format Check
       #working-directory: ${{ matrix.files }}
       env:
-        filepath: ${{ matrix.file }}
+        filepath: ${{ matrix.files }}
       run: |
         terraform fmt $filepath -check
