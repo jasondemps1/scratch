@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: jasondemps1/scratch/.github/worklows/deploy-tf@feature/test1
+    - uses: jasondemps1/scratch/.github/workflows/deploy-tf@feature/test1
       with:
         who-to-greet: 'me'
